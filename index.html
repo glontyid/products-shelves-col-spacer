@@ -97,16 +97,16 @@
 
     </style>
     <style>
-@media only screen and (max-width: 480px) {
-  u ~ div .full-width {
-    min-width: 100vw;
-  }
+        @media only screen and (max-width: 480px) {
+            u ~ div .full-width {
+                min-width: 100vw;
+            }
 
-  div > u ~ div .full-width {
-    min-width: 100%;
-  }
-}
-</style>
+            div > u ~ div .full-width {
+                min-width: 100%;
+            }
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -124,41 +124,62 @@
             mso-table-rspace: 0;
         }
 
-        @media (min-width: 768px) {
+        .iterated-column {
+            width: 33.333%;
+            box-sizing: border-box;
+            padding-bottom: 6px;
+            padding-left: 6px;
+            padding-right: 6px;
+        }
+
+        @media (min-width:768px) {   
             .col-lg-3 {
-                width: 32%;
+                width: 33.333%;
                 box-sizing: border-box;
             }
 
-            .col-sx-spacer {
-                width: 0px;
+            .is-last-row__lg {
+                padding-bottom: 0;
             }
 
-            .col-md-spacer {
-                width: 0px;
+            .first-col-lg__padding {
+                padding-left: 0;
+                padding-right: 4px;
             }
 
-            .col-lg-spacer {
-                width: 6px!important;
+            .center-col-lg__padding {
+                padding-left: 2px;
+                padding-right: 2px;
+            }
+
+            .last-col-lg__padding {
+                padding-left: 4px;
+                padding-right: 0;
             }
         }
 
         @media (max-width: 767px) {
             .col-md-2 {
-                width: 49%;
+                width: 50%;
                 box-sizing: border-box;
             }
 
-            .col-lg-spacer {
-                width: 0px;
+            .first-col-md__padding {
+                padding-left: 0;
+                padding-right: 3px;
             }
 
-            .col-sx-spacer {
-                width: 0px;
+            .last-col-md__padding {
+                padding-left: 3px;
+                padding-right: 0;
             }
 
-            .col-md-spacer {
-                width: 6px!important;
+            .is-last-row__lg {
+                padding-bottom: 6px;
+            }
+
+            .is-last-row__md {
+                padding-bottom: 0;
             }
 
         }
@@ -174,20 +195,20 @@
                 height: auto!important;
             }
 
-            .col-lg-spacer {
-                width: 0px;
+            .col-sx__padding {
+                padding-left: 0;
+                padding-right: 0;
             }
 
-            .col-md-spacer {
-                width: 0px;
+            .is-last-row__md, .is-last-row__lg {
+                padding-bottom: 6px;
             }
 
-            .col-sx-spacer {
-                width: 0px!important;
+            .is-last-row__sx {
+                padding-bottom: 0;
             }
 
         }
-
     </style>
 </head>
 
@@ -222,15 +243,19 @@
                                                             <tr>
                                                                 <td align="center" style="padding: 0; line-height: normal; font-size: 0; text-align: center;">
                                                                     <!--[if (gte mso 9)|(IE)]><table width="100%" cellpadding="0" cellspacing="0"><tr><![endif]-->
-                                                                    <!--[if (gte mso 9)|(IE)]><td width="32%" valign="top" align="center" style="width:32%;padding:0;"><![endif]-->
+                                                                    <!--[if (gte mso 9)|(IE)]><td width="33.333%" valign="top" align="center" style="width:33.333%;padding:3px;"><![endif]-->
                                                                     <div 
                                                                     class="
                                                                         iterated-column 
                                                                         col-lg-3
                                                                         col-md-2
                                                                         col-sx-1
+
+                                                                        first-col-lg__padding
+                                                                        first-col-md__padding
+                                                                        col-sx__padding
                                                                         " 
-                                                                        style="display: inline-block; vertical-align: top;">
+                                                                        style="display: inline-block; vertical-align: top;box-sizing: border-box;">
                                                                         <table data-v-94f0c760="" width="100%"
                                                                             border="0" cellpadding="0" cellspacing="0"
                                                                             style="border-collapse: collapse; width: 100%; border-spacing: 0px;">
@@ -471,20 +496,7 @@
                                                                     </div>
                                                                     <!--[if (gte mso 9)|(IE)]></td><![endif]-->
 
-                                                                    <!--[if (gte mso 9)|(IE)]><td width="6" valign="top" align="center" style="width:6px;padding:0;"><![endif]-->
-                                                                    <div 
-                                                                        class="
-                                                                            iterated-column-spacer
-
-                                                                            col-lg-spacer
-                                                                            col-md-spacer
-                                                                            col-sx-spacer
-                                                                        " 
-                                                                        style="display: inline-block; vertical-align: top;">
-                                                                    </div>
-                                                                    <!--[if (gte mso 9)|(IE)]></td><![endif]-->
-
-                                                                    <!--[if (gte mso 9)|(IE)]><td width="32%" valign="top" align="center" style="width:32%;padding:0;"><![endif]-->
+                                                                    <!--[if (gte mso 9)|(IE)]><td width="33.333%" valign="top" align="center" style="width:33.333%;padding:3px;"><![endif]-->
                                                                     <div 
                                                                         class="
                                                                             iterated-column 
@@ -492,10 +504,11 @@
                                                                             col-md-2
                                                                             col-sx-1
 
-                                                                            col-md-pe
-                                                                            col-sx-pe
+                                                                            center-col-lg__padding
+                                                                            last-col-md__padding
+                                                                            col-sx__padding
                                                                         " 
-                                                                        style="display: inline-block; vertical-align: top;">
+                                                                        style="display: inline-block; vertical-align: top;box-sizing: border-box;">
                                                                         <table data-v-94f0c760="" width="100%"
                                                                             border="0" cellpadding="0" cellspacing="0"
                                                                             style="border-collapse: collapse; width: 100%; border-spacing: 0px;">
@@ -738,27 +751,19 @@
                                                                     </div>
                                                                     <!--[if (gte mso 9)|(IE)]></td><![endif]-->
 
-                                                                    <!--[if (gte mso 9)|(IE)]><td width="6" valign="top" align="center" style="width:6px;padding:0;"><![endif]-->
-                                                                    <div 
-                                                                        class="
-                                                                            iterated-column-spacer
-
-                                                                            col-lg-spacer
-                                                                            col-sx-spacer
-                                                                        " 
-                                                                        style="display: inline-block; vertical-align: top;">
-                                                                    </div>
-                                                                    <!--[if (gte mso 9)|(IE)]></td><![endif]-->
-
-                                                                    <!--[if (gte mso 9)|(IE)]><td width="32%" valign="top" align="center" style="width:32%;padding:0;"><![endif]-->
+                                                                    <!--[if (gte mso 9)|(IE)]><td width="33.333%" valign="top" align="center" style="width:33.333%;padding:3px;"><![endif]-->
                                                                     <div 
                                                                         class="
                                                                             iterated-column 
                                                                             col-lg-3
                                                                             col-md-2
                                                                             col-sx-1
+
+                                                                            last-col-lg__padding
+                                                                            first-col-md__padding
+                                                                            col-sx__padding
                                                                         " 
-                                                                        style="display: inline-block; vertical-align: top;">
+                                                                        style="display: inline-block; vertical-align: top;box-sizing: border-box;">
                                                                         <table 
                                                                             data-v-94f0c760="" width="100%"
                                                                             border="0" cellpadding="0" cellspacing="0"
@@ -1002,20 +1007,8 @@
                                                                     </div>
                                                                     <!--[if (gte mso 9)|(IE)]></td><![endif]-->
 
-                                                                    <!--[if (gte mso 9)|(IE)]><td width="6" valign="top" align="center" style="width:6px;padding:0;"><![endif]-->
-                                                                    <div 
-                                                                        class="
-                                                                            iterated-column-spacer
-
-                                                                            col-md-spacer
-                                                                            col-sx-spacer
-                                                                        " 
-                                                                        style="display: inline-block; vertical-align: top;">
-                                                                    </div>
-                                                                    <!--[if (gte mso 9)|(IE)]></td><![endif]-->
-
                                                                     <!--[if (gte mso 9)|(IE)]></tr><tr><![endif]-->
-                                                                    <!--[if (gte mso 9)|(IE)]><td width="32%" valign="top" align="center" style="width:32%;padding:0;"><![endif]-->
+                                                                    <!--[if (gte mso 9)|(IE)]><td width="33.333%" valign="top" align="center" style="width:33.333%;padding:3px;"><![endif]-->
                                                                     <div 
                                                                         class="
                                                                             iterated-column 
@@ -1023,13 +1016,13 @@
                                                                             col-md-2
                                                                             col-sx-1
 
-                                                                            col-md-pe
-                                                                            col-sx-pe
+                                                                            first-col-lg__padding
+                                                                            last-col-md__padding
+                                                                            col-sx__padding
 
-                                                                            col-md-pb
-                                                                            col-sx-pb
+                                                                            is-last-row__lg
                                                                         " 
-                                                                        style="display: inline-block; vertical-align: top;">
+                                                                        style="display: inline-block; vertical-align: top;box-sizing: border-box;">
                                                                         <table data-v-94f0c760="" width="100%"
                                                                             border="0" cellpadding="0" cellspacing="0"
                                                                             style="border-collapse: collapse; width: 100%; border-spacing: 0px;">
@@ -1272,19 +1265,7 @@
                                                                     </div>
                                                                     <!--[if (gte mso 9)|(IE)]></td><![endif]-->
 
-                                                                    <!--[if (gte mso 9)|(IE)]><td width="6" valign="top" align="center" style="width:6px;padding:0;"><![endif]-->
-                                                                    <div 
-                                                                        class="
-                                                                            iterated-column-spacer
-
-                                                                            col-lg-spacer
-                                                                            col-sx-spacer
-                                                                        " 
-                                                                        style="display: inline-block; vertical-align: top;">
-                                                                    </div>
-                                                                    <!--[if (gte mso 9)|(IE)]></td><![endif]-->
-
-                                                                    <!--[if (gte mso 9)|(IE)]><td width="32%" valign="top" align="center" style="width:32%;padding:0;"><![endif]-->
+                                                                    <!--[if (gte mso 9)|(IE)]><td width="33.333%" valign="top" align="center" style="width:33.333%;padding:3px;"><![endif]-->
                                                                     <div 
                                                                         class="
                                                                             iterated-column 
@@ -1292,12 +1273,14 @@
                                                                             col-md-2
                                                                             col-sx-1
 
-                                                                            col-md-pe
-                                                                            col-sx-pe
+                                                                            center-col-lg__padding
+                                                                            first-col-md__padding
+                                                                            col-sx__padding
 
-                                                                            col-sx-pb
+                                                                            is-last-row__lg
+                                                                            is-last-row__md
                                                                         " 
-                                                                        style="display: inline-block; vertical-align: top;">
+                                                                        style="display: inline-block; vertical-align: top;box-sizing: border-box;">
                                                                         <table data-v-94f0c760="" width="100%"
                                                                             border="0" cellpadding="0" cellspacing="0"
                                                                             style="border-collapse: collapse; width: 100%; border-spacing: 0px;">
@@ -1539,32 +1522,24 @@
                                                                     </div>
                                                                     <!--[if (gte mso 9)|(IE)]></td><![endif]-->
 
-                                                                    <!--[if (gte mso 9)|(IE)]><td width="6" valign="top" align="center" style="width:6px;padding:0;"><![endif]-->
-                                                                    <div 
-                                                                        class="
-                                                                            iterated-column-spacer
-
-                                                                            col-lg-spacer
-                                                                            col-md-spacer
-                                                                            col-sx-spacer
-                                                                        " 
-                                                                        style="display: inline-block; vertical-align: top;">
-                                                                    </div>
-                                                                    <!--[if (gte mso 9)|(IE)]></td><![endif]-->
-
-                                                                    <!--[if (gte mso 9)|(IE)]><td width="32%" valign="top" align="center" style="width:32%;padding:0;"><![endif]-->
+                                                                    <!--[if (gte mso 9)|(IE)]><td width="33.333%" valign="top" align="center" style="width:33.333%;padding:3px;"><![endif]-->
                                                                     <div 
                                                                         class="
                                                                             iterated-column
 
-                                                                            col-md-pe
-                                                                            col-sx-pe
+                                                                            last-col-lg__padding
+                                                                            last-col-md__padding
+                                                                            col-sx__padding
+
+                                                                            is-last-row__lg
+                                                                            is-last-row__md
+                                                                            is-last-row__sx
 
                                                                             col-lg-3
                                                                             col-md-2
                                                                             col-sx-1
                                                                         " 
-                                                                        style="display: inline-block; vertical-align: top;">
+                                                                        style="display: inline-block; vertical-align: top;box-sizing: border-box;">
                                                                         <table data-v-94f0c760="" width="100%"
                                                                             border="0" cellpadding="0" cellspacing="0"
                                                                             style="border-collapse: collapse; width: 100%; border-spacing: 0px;">
@@ -1832,6 +1807,6 @@
             </tr>
         </table>
     </div>
+    <div>{{unsubscribeUrl}}</div>
 </body>
-
 </html>
